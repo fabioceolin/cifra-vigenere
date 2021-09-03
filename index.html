@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cifra de Vigenère</title>
+    <meta charset="utf-8" />
+    <script src="vigenere.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="form">
+      <div class="content">
+        <div class="title">Cifra de Vigenère</div>
+        <div class="subtitle">1. Primeiro digite o Texto e a Chave!</div>
+        <div class="subtitle">
+          2. Para incluir espaço utilize 32 no minimo da ASCII!
+        </div>
+        <div class="subtitle">
+          3. Para incluir letras minusculas utilize 123 no máximo da ASCII!
+        </div>
+        <div class="input-container ic1">
+          <input id="texto" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="texto" class="placeholder">Texto</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="chave" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="chave" class="placeholder">Chave</label>
+        </div>
+        <div class="grid grid-template-columns-2">
+          <div class="input-container ic2">
+            <input
+              id="minASCII"
+              class="input"
+              type="text"
+              placeholder=" "
+              value="65"
+            />
+            <div class="cut"></div>
+            <label for="minASCII" class="placeholder">Min ASCII</label>
+          </div>
+          <div class="input-container ic2">
+            <input
+              id="maxASCII"
+              class="input"
+              type="text"
+              placeholder=" "
+              value="91"
+            />
+            <div class="cut"></div>
+            <label for="maxASCII" class="placeholder">Max ASCII</label>
+          </div>
+        </div>
+        <div class="input-container ic2">
+          <input
+            id="resultado"
+            class="input"
+            type="text"
+            placeholder=" "
+            readonly
+          />
+          <div class="cut"></div>
+          <label for="resultado" class="placeholder">Resultado</label>
+        </div>
+        <div class="grid grid-template-columns-2">
+          <button
+            type="text"
+            class="submit"
+            onclick="
+            encrip(
+              document.getElementById('texto'),
+              document.getElementById('chave'),
+              document.getElementById('resultado')
+            )"
+          >
+            Criptografar
+          </button>
+          <button
+            type="button"
+            class="submit"
+            onclick="
+            decrip(
+              document.getElementById('texto'),
+              document.getElementById('chave'),
+              document.getElementById('resultado')
+            )"
+          >
+            Descriptografar
+          </button>
+          <button type="button" class="submit2" onclick="printTable();">
+            Mostrar tabela
+          </button>
+          <button type="button" class="submit2" onclick="deleteTable();">
+            Ocultar tabela
+          </button>
+        </div>
+      </div>
+      <table class="table" id="ascii"></table>
+    </div>
+  </body>
+</html>
